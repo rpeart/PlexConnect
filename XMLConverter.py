@@ -325,6 +325,9 @@ def XML_PMS2aTV(PMS_baseURL, path, options):
     elif path=='/library/sections':  # from PlexConnect.xml -> for //local, //myplex
         XMLtemplate = 'Library.xml'
     
+    elif cmd=='LibraryOptions':
+        XMLtemplate = 'LibraryOptions.xml'
+    
     elif path=='/channels/all':
         XMLtemplate = 'Channel_'+g_ATVSettings.getSetting(options['PlexConnectUDID'], 'channelview')+'.xml'
         path = ''
@@ -605,7 +608,7 @@ class CCommandHelper():
         self.path = {'main': path}
         
         self.ATV_udid = self.options['PlexConnectUDID']
-        self.variables = {}
+        self.variables = {'path': path}
     
     # internal helper functions
     def getParam(self, src, param):

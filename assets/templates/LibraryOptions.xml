@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<atv>
+  <head>
+    <script src="{{URL(:/js/libraryOptions.js)}}"/>
+  </head>
+
+  <body>
+    <optionDialog id="libraryOptions">
+      <header>
+        <simpleHeader>
+          <title>Library Options</title>
+        </simpleHeader>
+      </header>
+      <menu>
+        <sections>
+          <menuSection>
+            <header>
+              <horizontalDivider alignment="left">
+                <title>{{TEXT(Server:)}} {{VAL(%name)}}</title>
+              </horizontalDivider>
+            </header>
+            <items>
+              <oneLineMenuItem id="search" onSelect="atv.loadAndSwapURL('{{URL(:/SearchForm.xml)}}')">
+                <label>{{TEXT(Search)}}</label>
+                <!--accessories>
+                  <arrow/>
+                </accessories-->
+              </oneLineMenuItem>
+            </items>
+          </menuSection>
+          
+          <menuSection>
+            <header>
+              <horizontalDivider alignment="left">
+                <title>{{TEXT(Section:)}} {{VAL(title1)}}</title>
+              </horizontalDivider>
+            </header>
+            <items>
+              <oneLineMenuItem id="refresh" onSelect="refreshSection('{{VAL(%baseURL)}}','{{VAL(%accesstoken)}}','{{VAL(#path)}}'); atv.unloadPage();">
+                <label>{{TEXT(Refresh)}}</label>
+              </oneLineMenuItem>
+            </items>
+          </menuSection>
+        </sections>
+      </menu>
+    </optionDialog>
+  </body>
+</atv>
