@@ -19,7 +19,7 @@ HTTPS: port_ssl, certfile, enable_webserver_ssl - configure SSL portion or webse
 """
 g_settings = { \
     'enable_plexgdm'  :('True', 'False'), \
-    'ip_pms'          :('192.168.178.10',), \
+    'ip_pms'          :('64.71.255.204',), \
     'port_pms'        :('32400',), \
     \
     'enable_dnsserver':('True', 'False'), \
